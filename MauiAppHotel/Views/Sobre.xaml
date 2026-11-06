@@ -20,14 +20,15 @@
             Margin="0, 50, 0, 50" />
         
         <Border StrokeShape="RoundRectangle 10"
-        BackgroundColor="{StaticResource Gray200}">
+        BackgroundColor="{StaticResource SecondaryDarkText}">
 
             <VerticalStackLayout Padding="10">
                 <Label Text="App desenvolvido por Felipe Camargo&#10;Desenvolvido no ano 2026." />
             </VerticalStackLayout>
         </Border>
                     
-        <Button Text="Voltar"      
+        <Button Text="Voltar" 
+                BackgroundColor="DarkSlateBlue"
                 Clicked="Button_Clicked"        
                 Margin="300, 10, 0, 0" />
         
