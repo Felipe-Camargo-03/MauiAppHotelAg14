@@ -27,10 +27,31 @@ public partial class ContratacaoHospedagem : ContentPage
     {
         dtpck_checkout.MinimumDate = e.NewDate?.AddDays(1);
     }
-    private void Button_Clicked(object sender, EventArgs e)
-
+    private void btn_Calculo(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new Sobre());
+        try
+        {
+            Hospedagem h = new()
+            {
+                QntAdultos = Convert.ToInt32(stp_adultos.Value),
+                QntCriancas = Convert.ToInt32(stp_criancas.Value),
+                QuartoEscolhido = (Quarto)pck_quarto.SelectedItem,
+                DataCheckin = dtpck_checkin.Date.Value,
+                DataCheckout = dtpck_checkout.Date.Value,
+            };
+            Navigation.PushAsync(new HospedagemContratada
+            {
+                BindingContext = h
+            });
+        }
+        catch (Exception ex)
+        {
+            DisplayAlertAsync("Ops!", ex.Message, "OK");
+        } 
     }
 
+        private void btn_Sobre(object sender, EventArgs e) 
+        {      
+        Navigation.PushAsync(new Sobre());
+        }
 }

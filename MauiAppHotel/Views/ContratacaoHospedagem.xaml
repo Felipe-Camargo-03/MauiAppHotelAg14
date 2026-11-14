@@ -11,6 +11,7 @@
     </ContentPage.Resources>
         
     <VerticalStackLayout Padding="10"
+                         Spacing="10"
                          VerticalOptions="Center"> 
         
         <Label Text="Calculo da Diária"
@@ -29,15 +30,15 @@
                     <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" />
                     <Label Grid.Row="0" Grid.Column="1"                    
                            Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_Adultos}"/>                    
-                    <Stepper x:Name="stp_Adultos" Grid.Row="0" Grid.Column="2" 
+                           BindingContext="{x:Reference stp_adultos}"/>                    
+                    <Stepper x:Name="stp_adultos" Grid.Row="0" Grid.Column="2" 
                              Minimum="1" Maximum="5"/>                     
                     
                     <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" />
                     <Label Grid.Row="1" Grid.Column="1"                           
                            Text="{Binding Value}"       
-                           BindingContext="{x:Reference stp_Crianças}" />                    
-                    <Stepper x:Name="stp_Crianças" Grid.Row="1" Grid.Column="2" 
+                           BindingContext="{x:Reference stp_criancas}" />                    
+                    <Stepper x:Name="stp_criancas" Grid.Row="1" Grid.Column="2" 
                              Minimum="0" Maximum="5" />
 
                 </Grid>
@@ -64,6 +65,7 @@
                     </Grid>                    
                  </Border>
                 <Button Text="Calcular!"
+                Clicked="btn_Calculo"
                 BackgroundColor="DarkSlateBlue"/>                
                                        
             </VerticalStackLayout>
@@ -71,7 +73,7 @@
         
         <Button Text="Sobre"
         BackgroundColor="DarkSlateBlue"
-        Clicked="Button_Clicked"
+        Clicked="btn_Sobre"
         Margin="300, 10, 0, 0" />
         
     </VerticalStackLayout>
